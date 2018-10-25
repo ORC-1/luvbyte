@@ -119,6 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # AUTHENTICATION_BACKENDS For Sociial Logins
 
 AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.facebook.FacebookOAuth2',
 
@@ -126,12 +127,16 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-LOGIN_URL = 'login'
+# LOGIN_URL = 'login'
+LOGIN_URL = '/auth/login/google-oauth2/'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
 
 SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
