@@ -1,0 +1,17 @@
+celery A luvbyte worker 
+celery A luvbyte beat
+
+celery -A luvbyte worker --pool=solo -l info
+
+celery -A luvbyte beat -l info
+
+Another working solution is to use eventlet (pip install eventlet -> celery -A your_app_name worker --pool=eventlet). This way it is possible to have parallel-running tasks on Windows.
+
+
+++++++++++++++++USING_ON_HEROKU++++++++
+
+web: gunicorn voltbe2.wsgi --log-file - --log-level debug
+worker: celery -A voltbe2 worker -events -loglevel info 
+beat: celery -A voltbe2 beat 
+
+postgresql-curly-55193
