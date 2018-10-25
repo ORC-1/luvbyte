@@ -3,6 +3,7 @@ Django settings for luvbyte project.
 """
 
 import os
+import dj_database_url
 from datetime import timedelta
 from decouple import config,Csv
 from celery.schedules import crontab
