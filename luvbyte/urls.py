@@ -21,6 +21,7 @@ urlpatterns = [
     path('login/',auth_views.LoginView.as_view(), name='login'),
     path('admin/statuscheck/', include('celerybeat_status.urls')),
     path('logout/',auth_views.LogoutView.as_view(), name='logout'),
+    # path('log/', include('social_django.urls', namespace='social')),
     path('oauth/', include('social_django.urls', namespace='social')),
 
 
