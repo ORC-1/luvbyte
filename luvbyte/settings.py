@@ -127,8 +127,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-# LOGIN_URL = 'login'
-LOGIN_URL = '/auth/login/google-oauth2/'
+LOGIN_URL = 'login'
+# LOGIN_URL = '/auth/login/google-oauth2/'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
 
