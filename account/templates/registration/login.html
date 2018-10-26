@@ -26,7 +26,10 @@
   <div class="live">
     <div class="login">
       {% if form.errors %}
-        <p class="login__submit" class="error"> Sorry, you have entered an incorrect username or password</p>
+      <div class="alert alert-success" role="alert">
+                   Sorry, you have entered an incorrect username or password
+      </div>
+        
       {% endif %}
 
       <form method="post" action="{% url "login" %}" >
