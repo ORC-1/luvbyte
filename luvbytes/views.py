@@ -19,13 +19,6 @@ from django.contrib.auth.mixins import (LoginRequiredMixin,
 def home(request):
     username_log = request.user.username
     user_id = request.user.pk
-    # status_check = UserProfile.objects.get(User=int(user_id))
-    # if status_check.Setup: #check if user account setup is True
-    #     return render(request, 'dashboard/home.html')
-    # else:
-    #     return redirect('setup')
-
-
     try:
         status_check = UserProfile.objects.get(User=int(user_id))
         if status_check.Setup: #check if user account setup is True

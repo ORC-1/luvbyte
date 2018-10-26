@@ -50,12 +50,6 @@ class UserProfile(models.Model):
     def __str__(self):
         return str(self.User)
 
-    # def activate(self):
-    #     self.Setup = True
-    #     return self.setup
-
-
-
 
 
     # SMS, VOICE,
