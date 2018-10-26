@@ -12,7 +12,7 @@ User = get_user_model()
 
 class SignUp(CreateView):
     form_class = forms.UserCreateForm
-    success_url = redirect('setup')
+    success_url = reverse_lazy('setup')
     template_name = 'registration/SignUp.html'
 
 
@@ -25,13 +25,14 @@ class SetUp(CreateView):
             'Target_phone',
             'Type',
             'Status', )
-    success_url = redirect('home')
+    success_url = reverse_lazy('home')
     template_name = 'registration/SetUp.html'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.User = self.request.user
-        self.object.Setup = True
+        # self.object.Setup = True
+
         self.object.save()
         return super().form_valid(form)
 
