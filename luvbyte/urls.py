@@ -13,7 +13,7 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', luv_views.home, name='home'),
+    path('home/', luv_views.home, name='home'),
     # path('my', luv_views.my_view, name='my'),
     path('logout', luv_views.signout, name="logout"),
     path('setup/', ac_views.SetUp.as_view(), name='setup'),
@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/statuscheck/', include('celerybeat_status.urls')),
     path('logout/',auth_views.LogoutView.as_view(), name='logout'),
     # path('log/', include('social_django.urls', namespace='social')),
-    path('oauth/', include('social_django.urls', namespace='social')),
+    path('', include('social_django.urls', namespace='social')),
 
 
 ]
