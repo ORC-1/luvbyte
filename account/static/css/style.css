@@ -6,6 +6,7 @@
   padding: 0;
 }
 
+
 /* .pinkit {
   background: rgb(255, 51, 102)"
 } */
@@ -22,7 +23,14 @@
 .control-label{
   color: white !important;
 }
+.help-block{
+    color: white !important;
+    /* visibility: hidden !important; */
 
+}
+/* .helptext{
+  visibility: hidden;
+} */
 /* .h1{
   color: white !important;
 } */
@@ -80,6 +88,17 @@ input, button {
   margin-top: -26.5rem;
   width: 30rem;
   height: 53rem;
+  overflow: hidden;
+}
+
+.liveSignup {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -15rem;
+  margin-top: -26.5rem;
+  width: 30rem;
+  height: 64rem;
   overflow: hidden;
 }
 

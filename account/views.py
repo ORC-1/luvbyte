@@ -1,4 +1,4 @@
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model, authenticate, login
 from django.views.generic import CreateView
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -14,6 +14,16 @@ class SignUp(CreateView):
     form_class = forms.UserCreateForm
     success_url = reverse_lazy('setup')
     template_name = 'registration/SignUp.html'
+    def form_valid(self, form):
+        valid = super(SignUp, self).form_valid(form)
+        username, password = form.cleaned_data.get('username'), form.cleaned_data.get('password1')
+        new_user = authenticate(username=username, password=password)
+        login(self.request, new_user)
+        return valid
+
+    
+
+
 
 
 
@@ -31,7 +41,7 @@ class SetUp(CreateView):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.User = self.request.user
-        # self.object.Setup = True
+        self.object.Setup = True
 
         self.object.save()
         return super().form_valid(form)
