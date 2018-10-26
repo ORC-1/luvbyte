@@ -127,10 +127,10 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SOCIAL_AUTH_ENABLED_BACKENDS = ('google',)
-LOGIN_URL = '/auth/login/google-oauth2/'
-# LOGIN_URL = 'oauth/'
+# LOGIN_URL = '/auth/login/google-oauth2/'
+LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'home'
 
 # SOCIAL_AUTH_FACEBOOK_KEY = config('SOCIAL_AUTH_FACEBOOK_KEY')
 # SOCIAL_AUTH_FACEBOOK_SECRET = config('SOCIAL_AUTH_FACEBOOK_SECRET')
