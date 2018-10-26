@@ -127,7 +127,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SOCIAL_AUTH_ENABLED_BACKENDS = ('google',)
-LOGIN_URL = '/auth/login/google-oauth2/'
+LOGIN_URL = 'complete/google-oauth2/'
 # LOGIN_URL = 'oauth/'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
