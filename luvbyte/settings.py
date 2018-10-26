@@ -126,7 +126,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-
+SOCIAL_AUTH_ENABLED_BACKENDS = ('google',)
 LOGIN_URL = '/auth/login/google-oauth2/'
 # LOGIN_URL = 'oauth/'
 LOGOUT_URL = 'logout'
