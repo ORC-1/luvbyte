@@ -27,9 +27,9 @@
     <div class="login">
       {% if form.errors %}
       <div class="alert alert-success" role="alert">
-                   Sorry, you have entered an incorrect username or password
+                   <h2>Sorry, you have entered an incorrect username or password </h2>
       </div>
-        
+
       {% endif %}
 
       <form method="post" action="{% url "login" %}" >
